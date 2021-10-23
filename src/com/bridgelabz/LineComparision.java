@@ -1,6 +1,6 @@
 package com.bridgelabz;
 /* Date:21/10/21
-* purpose:Calculating equality  of line So that I know when two lines are equal or not.
+* purpose:Calculating equality  of line So that I check  when two lines are equal or not.
  */
 
 import java.util.Scanner;
