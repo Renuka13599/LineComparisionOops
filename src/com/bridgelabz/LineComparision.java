@@ -1,61 +1,38 @@
 package com.bridgelabz;
-/* Date:21/10/21
-* purpose:Calculating equality  of line So that I know when two lines are equal or not.
- */
-
-import java.util.Scanner;
+import java.util.*;
 public class LineComparision {
-    static boolean CheckEquality(double Line1, double Line2) {
+        double x1,x2,y1,y2;
+        public LineComparision(double x1, double x2 , double y1 ,double y2){
+            this.x1=x1;
+            this.x2=x2;
+            this.y1=y1;
+            this.y2=y2;
+        }
+        public double calOfLength(){
+            double length = Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
+            return length;
+        }
+        public static void comparision(double a , double b){
 
-        if (Line1 == Line2)
-            return true;
-        return false;
-    }
-    public static void main (String[]args){
-
-
-            Scanner sc = new Scanner(System.in);
-            //Variables for first line
-            int x1, y1, x2, y2;
-            double Line1, Line2;
-            // Points for line 1
-
-            System.out.println("Enter X1 Point");
-            x1 = sc.nextInt();
-            System.out.println("Enter Y1 Point");
-            y1 = sc.nextInt();
-            System.out.println("Enter X2 Point");
-            x2 = sc.nextInt();
-            System.out.println("Enter Y2 Point");
-            y2 = sc.nextInt();
-
-            //Computation for line 1
-            Line1 = Math.sqrt((x2 - x1) ^ 2 + (y2 - y1));
-
-
-            // Variables for seconds line
-            int x3, y3, x4, y4;
-            // Points for line 2
-            System.out.println("Enter X3 Point");
-            x3 = sc.nextInt();
-            System.out.println("Enter Y3 Point");
-            y3 = sc.nextInt();
-            System.out.println("Enter X4 Point");
-            x4 = sc.nextInt();
-            System.out.println("Enter Y4 Point");
-            y4 = sc.nextInt();
-
-            Line2 = Math.sqrt((x4 - x3) ^ 2 + (y4 - y3));
-
-            System.out.println(" Lenth Of Line 1 is : " + "(" + x1 + "," + y1 + ")," + "(" + x2 + "," + y2 + ")===>" + LenthOfLine1);
-            System.out.println(" Lenth Of Line 2 is : " + "(" + x3 + "," + y3 + ")," + "(" + x4 + "," + y4 + ")===>" + LenthOfLine2);
-
-            boolean Equals = CheckEquality(Line1, Line2);
-            if (Equals)
-                System.out.println("Both Lines Are Equals");
+            boolean EQUAL = (a == b);
+            System.out.println("It Is Equal : "+EQUAL);
+            double line = Double.compare(a,b);
+            if (line == 1){
+                System.out.println("line1 is greater than line 2");
+            }
             else
-                System.out.println("Both Lines Are Not Equals");
+                System.out.println("line1 is lesser than line 2");
 
-    }
+        }
+        public static void main(String[] args) {
+            LineComparision lineComparision1 = new LineComparision(9,4,5,6);
+            LineComparision lineComparision2 = new LineComparision(9,6,7,8);
+            double lengthOfLine1 = lineComparision1.calOfLength();
+            double lengthOfLine2 = lineComparision2.calOfLength();
+            comparision(lengthOfLine1,lengthOfLine2);
+        }
+
 }
+
+
 
